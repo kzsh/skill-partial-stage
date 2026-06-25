@@ -1,5 +1,10 @@
 ---
-description: "Stage specific parts of a file's uncommitted changes, leaving the rest unstaged. Useful when git add -p can't split hunks finely enough."
+name: partial-stage
+description: >-
+  Precisely stage only specific changes within a file, leaving other changes unstaged for a later commit.
+  Use when: splitting one file's changes into multiple commits, staging part of a file, committing only
+  some changes in a file, git add -p can't split a hunk finely enough, hunks are too large or adjacent
+  to separate with interactive staging, or the user wants fine-grained control over what goes into a commit.
 ---
 
 # Partial Stage
@@ -10,7 +15,7 @@ Stage only specific changes from a file into the git index, leaving other change
 
 - `git add -p` can't split a hunk finely enough (adjacent additions that belong to different commits)
 - A file has interleaved changes for multiple logical commits
-- You need surgical control over what's staged vs what stays in the working tree
+- You need precise control over what's staged vs what stays in the working tree
 
 ## Technique
 
